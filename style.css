@@ -1,0 +1,153 @@
+ * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #47ccd2;
+}
+
+.container {
+    background-color: #47ccd2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 1rem;
+}
+
+.game_bored {
+    width: 100%;
+    max-width: 600px;
+    height: 95vh;
+    border: solid 2px black;
+    display: grid;
+    grid-template-rows: 5% 0.8fr 30%;
+    gap: 1vh ;
+    overflow: hidden;
+    position: relative;
+}
+
+.p {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.stats {
+    z-index: 100;
+    display: flex;
+    justify-content:space-evenly;
+    padding: 0 10px;
+    font-size: 3vh;
+}
+
+.lives, .score {
+    background-color: aliceblue;
+    font-size: 14px;
+    padding: 0.5vh;
+    border-radius: 0.5vh;
+    flex: 1;
+    text-align: center;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vh;
+    padding: 1vh;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vh; 
+    color: #20bcec;
+    padding: 1vh;
+    cursor: pointer;
+    background-color: #145461;
+    border: none;
+    border-radius: 1vh;
+    transition: background-color 0.3s ease;
+}
+
+.item:hover {
+    background-color: #0d3940;
+}
+
+.clear {
+    background-color: #96e1e4;
+    grid-column: span 1;
+    font-size: 4vh;
+}
+
+.result {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 4vh;
+    color: white;
+    background-color: #96e1e4;
+    padding: 1vh;
+    border-radius: 1vh;
+    grid-column: span 2;
+}
+
+.itemzer {
+    background-color: #145461;
+    grid-column: span 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .stats {
+        font-size: 4vh;
+    }
+
+    .item {
+        font-size: 5vh;
+    }
+
+    .result, .clear, .itemzer {
+        font-size: 5vh;
+    }
+    .game_bored{
+        grid-template-rows: 5% 0.8fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats {
+        font-size: 5vh;
+    }
+
+    .item {
+        font-size: 7vh;
+    }
+
+    .result, .clear, .itemzer {
+        font-size: 7vh;
+    }
+    .game_bored{
+        grid-template-rows: 4% 37% 30%;
+    }
+}
+
+.drop {
+    position: absolute;
+    /* top: 0; */
+    background-color: #b3f7ff;
+    border: 2px solid #00bfff;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    width: auto;
+    height: auto;
+}
+
